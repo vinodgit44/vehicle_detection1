@@ -142,10 +142,11 @@ This means we successfully set up the  Directory Structure and TensorFlow Object
 we will use a CONFIG File from one of the TensorFlow pre-trained models. There are plenty of models in the [TensorFlow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md), but we will use the **SSD MobileNet v2 320x320**, as it is on the faster end of the spectrum with decent performance. If you want you can choose a different model, but you will have to alter the steps slightly.
 
 To download the model you want, just click on the name in the TensorFlow Model Zoo. This should download a tar.gz file. Once it has downloaded, extracts the contents of the file to the ```workspace/training_demo/pre-trained-models``` directory.
-
-Now, we must create a directory to store our training pipeline. Navigate to the models directory and create a folder called ```ssd_mobilenet_v2_320x320_coco17_tpu-8```. Then copy the``` pipeline.config```  from the pre-trained-model we downloaded earlier to our newly created directory. Your directory should now look something like this.
-
+following action is optional(**already configured file inside model directory**)(if you want to check parameters or want to change configuration )
+############configuration
+Replace ```workspace/training_demo/models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config```  file inside model with ```workspace/training_demo/pre-trained-models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config```
 ```
+Now folder structure look like this.
 Training_demo/
 ├─ ...
 ├─ models/
@@ -157,23 +158,23 @@ Training_demo/
 
 Then open up ```workspace/training_demo/models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config``` in a text editor because we need to make some changes.
 - Line 3. Change ```num_classes``` to the number of classes your model detects. For the basketball, baseball, and football, example you would change it to ```num_classes: 5```
-- Line 135. Change ```batch_size``` according to available memory (Higher values require more memory and vice-versa). I changed it to:
+- Line 138. Change ```batch_size``` according to available memory (Higher values require more memory and vice-versa). I changed it to:
   - ```batch_size: 6```
-- Line 165. Change ```fine_tune_checkpoint``` to:
+- Line 162. Change ```fine_tune_checkpoint``` to:
   - ```fine_tune_checkpoint: "pre-trained-models/ssd_mobilenet_v2_320x320_coco17_tpu-8/checkpoint/ckpt-0"```
-- Line 171. Change ```fine_tune_checkpoint_type``` to:
+- Line 168. Change ```fine_tune_checkpoint_type``` to:
   - ```fine_tune_checkpoint_type: "detection"```
-- Line 175. Change ```label_map_path``` to:
+- Line 172. Change ```label_map_path``` to:
   - ```label_map_path: "workspace/data/train/train.pbtxt"```
-- Line 177. Change ```input_path``` to:
+- Line 174. Change ```input_path``` to:
   - ```input_path: "workspace/data/train/train.tfrecord"```
-- Line 185. Change ```label_map_path``` to:
+- Line 182. Change ```label_map_path``` to:
   - ```label_map_path: "workspace/data/train/train.pbtxt"```
-- Line 189. Change ```input_path``` to:
+- Line 186. Change ```input_path``` to:
   - ```input_path: "workspace/data/valid/test.tfrecord"```
 
 Once we have made all the necessary changes, that means we are ready for training. So let's move on to the next step!
-
+###Labelled dataset resides in **workspace/data** directory (train or valid)
 ### Training the Model
 Now you go back to your Anaconda Prompt. ```cd``` in to the ```training_demo``` with 
 
@@ -240,7 +241,8 @@ cd workspace/training_demo
 Then to run the script, just use
 
 ```
-python TF_image.py --model=../exported-models/my_mobilenet_model/ --labels=../data/label_map.pbtxt --image=../images/a.jpg 
+python3 TF-image-od.py --model=exported-models/my_mobilenet_model --labels=annotations/train.pbtxt --image=images/c.jpg --threshold=0.70
+
 ``` 
 
 
