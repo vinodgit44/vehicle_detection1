@@ -142,7 +142,10 @@ This means we successfully set up the  Directory Structure and TensorFlow Object
 we will use a CONFIG File from one of the TensorFlow pre-trained models. There are plenty of models in the [TensorFlow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md), but we will use the **SSD MobileNet v2 320x320**, as it is on the faster end of the spectrum with decent performance. If you want you can choose a different model, but you will have to alter the steps slightly.
 
 To download the model you want, just click on the name in the TensorFlow Model Zoo. This should download a tar.gz file. Once it has downloaded, extracts the contents of the file to the ```workspace/training_demo/pre-trained-models``` directory.
-following action is optional(**already configured file inside model directory**)(if you want to check parameters or want to change configuration )
+
+
+
+Following action is optional(**already configured file inside model directory**)(if you want to check parameters or want to change configuration )
 ############configuration
 Replace ```workspace/training_demo/models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config```  file inside model with ```workspace/training_demo/pre-trained-models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config```
 ```
@@ -248,10 +251,9 @@ python3 TF-image-od.py --model=exported-models/my_mobilenet_model --labels=annot
 
 If everything works properly you should get an output similar to this
 <p align="center">
-  <img src="workspace/image/test_output/mini_van43.jpg">
-<img src="workspace/image/test_output/MUV53.jpg">
-<img src="workspace/image/test_output/sedan14.jpeg">
-<img src="workspace/image/test_output/SUV111.jpeg">
+  <img src="workspace/data/output/Objectdd Detector_screenshot_١٢.٠٨.٢٠٢١.png">
+<img src="workspace/data/output/Object Detector_screenshot_١٢.٠٨.٢٠٢١.png">
+
 
 </p>
 
