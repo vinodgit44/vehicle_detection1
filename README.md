@@ -253,10 +253,12 @@ If everything works properly you should get an output similar to this
 <p align="center">
   <img src="workspace/data/output/Objectdd Detector_screenshot_١٢.٠٨.٢٠٢١.png">
 <img src="workspace/data/output/Object Detector_screenshot_١٢.٠٨.٢٠٢١.png">
+    <img src="workspace/data/output/three.png">
+    <img src="workspace/data/output/four.png">
 
 
 </p>
 
-**These results are only based on half training of data.**
+**These results are only based on few set training of data.**
 
-**we got are initial output but we can improve are accuracy by training on more data aswell as by choosing another initial pretrained weight if required.**
+**we got are initial output but we can improve are accuracy by training on large dataset aswell as by choosing another initial pretrained weight if required.**
