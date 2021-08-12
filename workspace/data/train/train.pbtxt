@@ -1,0 +1,10 @@
+item {
+    name: "pickup",
+    id: 1,
+    display_name: "pickup"
+}
+item {
+    name: "suv",
+    id: 2,
+    display_name: "suv"
+}
