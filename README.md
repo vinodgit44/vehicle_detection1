@@ -182,13 +182,13 @@ Once we have made all the necessary changes, that means we are ready for trainin
 Now you go back to your Anaconda Prompt. ```cd``` in to the ```training_demo``` with 
 
 ```
-cd C:\TensorFlow\workspace\training_demo
+cd /TensorFlow/workspace/training_demo
 ```
 
 I have already moved the training script in to the directory, so to run it just use 
 
 ```
-python model_main_tf2.py --model_dir=models\ssd_mobilenet_v2_320x320_coco17_tpu-8 --pipeline_config_path=models\ssd_mobilenet_v2_320x320_coco17_tpu-8\pipeline.config
+python model_main_tf2.py --model_dir=models/ssd_mobilenet_v2_320x320_coco17_tpu-8 --pipeline_config_path=models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config
 ```
 
 When running the script, you should expect a few warnings but as long as they're not errors you can ignore them. Eventually when the training process starts you should see output similar to this
@@ -205,7 +205,7 @@ I0810 11:56:12.520163 11172 model_lib_v2.py:644] Step 100 per-step time 0.640s l
 Once you have finished training and stopped the script, you are ready to export your finished model! You should still be in the ```training``` directory but if not use
 
 ```
-cd C:\TensorFlow\workspace\training_demo
+cd TensorFlow/workspace/training_demo
 ```
 
 I have already moved the script needed to export, so all you need to do is run this command
@@ -216,7 +216,7 @@ python3 exporter_main_v2.py --input_type image_tensor --pipeline_config_path ../
 
 **Note that if you get an error similar to ```TypeError: Expected Operation, Variable, or Tensor, got block4 in exporter_main_v2.py``` look at [this](https://github.com/tensorflow/models/issues/8881) error topic**
 
-But if this program finishes successfully, then model is finished! It should be located in the ```\workspace\training_demo\exported-models\my_mobilenet_model\saved_model``` folder. There should be an PB File called ```saved_model.pb```. This is the inference graph!
+But if this program finishes successfully, then model is finished! It should be located in the ```/workspace/training_demo/exported-models/my_mobilenet_model/saved_model``` folder. There should be an PB File called ```saved_model.pb```. This is the inference graph!
 
 
 
