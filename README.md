@@ -211,7 +211,7 @@ cd TensorFlow/workspace/training_demo
 I have already moved the script needed to export, so all you need to do is run this command
 
 ```
-python3 exporter_main_v2.py --input_type image_tensor --pipeline_config_path ../models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config --output_directory ../exported-models/my_mobilenet_model --trained_checkpoint_dir ../models/ssd_mobilenet_v2_320x320_coco17_tpu-8
+python3 exporter_main_v2.py --input_type image_tensor --pipeline_config_path models/ssd_mobilenet_v2_320x320_coco17_tpu-8/pipeline.config --output_directory exported-models/my_mobilenet_model --trained_checkpoint_dir models/ssd_mobilenet_v2_320x320_coco17_tpu-8
 ```
 
 **Note that if you get an error similar to ```TypeError: Expected Operation, Variable, or Tensor, got block4 in exporter_main_v2.py``` look at [this](https://github.com/tensorflow/models/issues/8881) error topic**
