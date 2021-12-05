@@ -30,7 +30,7 @@ Real beauty of choosing TensorFlow Object Detection API is that we can choose to
 ## The Steps
 ### Git clone the repo
 ```
-https://github.com/vinodgit44/vehicle_detection.git
+https://github.com/vinodgit44/vehicle_detection1.git
 ```
 This should clone all the files in a directory called car_detection.
 
